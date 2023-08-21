@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app_test/appfonts/appfonts.dart';
 import 'package:weather_app_test/appimages/appimages.dart';
 import 'package:weather_app_test/screens/home%20screen/homescreen_model.dart';
 
