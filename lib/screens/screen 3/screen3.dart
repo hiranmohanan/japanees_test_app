@@ -451,6 +451,294 @@ class Screen3 extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 10),
+          RichText(
+              text: const TextSpan(
+            text: '定休日',
+            style: fieldhead,
+            children: [
+              TextSpan(
+                text: '*',
+                style: TextStyle(
+                  color: Colors.red,
+                  fontSize: 20,
+                  fontWeight: FontWeight.normal,
+                ),
+              ),
+            ],
+          )),
+          const SizedBox(height: 10),
+          Wrap(
+            spacing: 10,
+            children: [
+              Chip(
+                elevation: 0,
+                side: BorderSide.none,
+                avatar: Checkbox(value: false, onChanged: (val) {}),
+                label: const Text('月'),
+              ),
+              Chip(
+                elevation: 0,
+                side: BorderSide.none,
+                avatar: Checkbox(value: false, onChanged: (val) {}),
+                label: const Text('火'),
+              ),
+              Chip(
+                elevation: 0,
+                side: BorderSide.none,
+                avatar: Checkbox(value: false, onChanged: (val) {}),
+                label: const Text('水'),
+              ),
+              Chip(
+                elevation: 0,
+                side: BorderSide.none,
+                avatar: Checkbox(value: false, onChanged: (val) {}),
+                label: const Text('木'),
+              ),
+              Chip(
+                elevation: 0,
+                side: BorderSide.none,
+                avatar: Checkbox(value: false, onChanged: (val) {}),
+                label: const Text('金'),
+              ),
+              Chip(
+                elevation: 0,
+                side: BorderSide.none,
+                avatar: Checkbox(value: true, onChanged: (val) {}),
+                label: const Text('土'),
+              ),
+              Chip(
+                elevation: 0,
+                side: BorderSide.none,
+                avatar: Checkbox(value: true, onChanged: (val) {}),
+                label: const Text('日'),
+              ),
+              Chip(
+                elevation: 0,
+                side: BorderSide.none,
+                avatar: Checkbox(value: true, onChanged: (val) {}),
+                label: const Text('祝'),
+              ),
+            ],
+          ),
+          const SizedBox(height: 10),
+          RichText(
+              text: const TextSpan(
+            text: '料理カテゴリー',
+            style: fieldhead,
+            children: [
+              TextSpan(
+                text: '*',
+                style: TextStyle(
+                  color: Colors.red,
+                  fontSize: 20,
+                  fontWeight: FontWeight.normal,
+                ),
+              ),
+            ],
+          )),
+          const SizedBox(height: 10),
+          DropdownButtonFormField(
+              items: const [
+                DropdownMenuItem(
+                  value: '1',
+                  child: Text('美味しい！リーズナブルなオムライスランチ！'),
+                ),
+                DropdownMenuItem(
+                  value: '2',
+                  child: Text('洋食'),
+                ),
+              ],
+              value: '1',
+              decoration: InputDecoration(
+                contentPadding: const EdgeInsets.only(left: 5),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: const BorderSide(color: Colors.grey, width: 2),
+                ),
+              ),
+              onChanged: (val) {}),
+
+          const SizedBox(height: 10),
+          RichText(
+              text: const TextSpan(
+            text: '座席数',
+            style: fieldhead,
+            children: [
+              TextSpan(
+                text: '*',
+                style: TextStyle(
+                  color: Colors.red,
+                  fontSize: 20,
+                  fontWeight: FontWeight.normal,
+                ),
+              ),
+            ],
+          )),
+          const SizedBox(height: 10),
+          TextFormField(
+              initialValue: '40席',
+              decoration: InputDecoration(
+                contentPadding: const EdgeInsets.only(left: 5),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: const BorderSide(color: Colors.grey, width: 2),
+                ),
+              ),
+              onChanged: (val) {}),
+
+          const SizedBox(height: 10),
+          RichText(
+              text: const TextSpan(
+            text: '喫煙席',
+            style: fieldhead,
+            children: [
+              TextSpan(
+                text: '*',
+                style: TextStyle(
+                  color: Colors.red,
+                  fontSize: 20,
+                  fontWeight: FontWeight.normal,
+                ),
+              ),
+            ],
+          )),
+          const SizedBox(height: 10),
+          Wrap(
+            children: [
+              Chip(
+                elevation: 0,
+                side: BorderSide.none,
+                avatar: Checkbox(value: true, onChanged: (val) {}),
+                label: const Text('有'),
+              ),
+              Chip(
+                elevation: 0,
+                side: BorderSide.none,
+                avatar: Checkbox(value: false, onChanged: (val) {}),
+                label: const Text('無'),
+              ),
+            ],
+          ),
+          const SizedBox(height: 10),
+          RichText(
+              text: const TextSpan(
+            text: '駐車場',
+            style: fieldhead,
+            children: [
+              TextSpan(
+                text: '*',
+                style: TextStyle(
+                  color: Colors.red,
+                  fontSize: 20,
+                  fontWeight: FontWeight.normal,
+                ),
+              ),
+            ],
+          )),
+          const SizedBox(height: 10),
+          Wrap(
+            children: [
+              Chip(
+                elevation: 0,
+                side: BorderSide.none,
+                avatar: Checkbox(value: true, onChanged: (val) {}),
+                label: const Text('有'),
+              ),
+              Chip(
+                elevation: 0,
+                side: BorderSide.none,
+                avatar: Checkbox(value: false, onChanged: (val) {}),
+                label: const Text('無'),
+              ),
+            ],
+          ),
+          const SizedBox(height: 10),
+          RichText(
+              text: const TextSpan(
+            text: '来店プレゼント',
+            style: fieldhead,
+            children: [
+              TextSpan(
+                text: '*',
+                style: TextStyle(
+                  color: Colors.red,
+                  fontSize: 20,
+                  fontWeight: FontWeight.normal,
+                ),
+              ),
+            ],
+          )),
+          const SizedBox(height: 10),
+          Wrap(
+            children: [
+              Chip(
+                elevation: 0,
+                side: BorderSide.none,
+                avatar: Checkbox(value: true, onChanged: (val) {}),
+                label: const Text('有（最大３枚まで）'),
+              ),
+              Chip(
+                elevation: 0,
+                side: BorderSide.none,
+                avatar: Checkbox(value: false, onChanged: (val) {}),
+                label: const Text('無'),
+              ),
+            ],
+          ),
+          const SizedBox(height: 10),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              imageset(),
+              imageset(),
+              SizedBox(
+                  // height: 90,
+                  // width: 90,
+                  child: Image.asset(kappimagetempimage)),
+            ],
+          ),
+          const SizedBox(height: 10),
+          RichText(
+              text: const TextSpan(
+            text: '来店プレゼント名',
+            style: fieldhead,
+            children: [
+              TextSpan(
+                text: '*',
+                style: TextStyle(
+                  color: Colors.red,
+                  fontSize: 20,
+                  fontWeight: FontWeight.normal,
+                ),
+              ),
+            ],
+          )),
+          const SizedBox(height: 10),
+          TextFormField(
+              initialValue: 'いちごクリームアイスクリーム, ジュース',
+              decoration: InputDecoration(
+                contentPadding: const EdgeInsets.only(left: 5),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: const BorderSide(color: Colors.grey, width: 2),
+                ),
+              ),
+              onChanged: (val) {}),
+          const SizedBox(height: 10),
+
+          Container(
+              decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(5)),
+                  gradient: LinearGradient(
+                      colors: [Color(0xFFEE7D42), Color(0xFFFFC8AB)])),
+              child: MaterialButton(
+                onPressed: () {},
+                child: const Text(
+                  '編集を保存',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ))
         ],
       ),
     );
