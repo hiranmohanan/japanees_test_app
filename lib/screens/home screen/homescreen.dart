@@ -21,7 +21,8 @@ class HomeScreen extends StatelessWidget {
               child: Center(
                 child: TextField(
                   decoration: InputDecoration(
-                      hintText: kstringsearch,
+                      contentPadding: EdgeInsets.all(10),
+                      hintText: '北海道, 札幌市',
                       border: OutlineInputBorder(
                         borderSide: BorderSide(
                           color: Colors.white,
