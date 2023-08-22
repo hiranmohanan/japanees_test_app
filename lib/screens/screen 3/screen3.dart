@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:weather_app_test/appimages/appimages.dart';
+import 'package:weather_app_test/controllers/screen3_controller.dart';
 
 class Screen3 extends StatelessWidget {
-  const Screen3({super.key});
+  Screen3({super.key});
+  final Screen3Controller _controller = Screen3Controller();
 
   @override
   Widget build(BuildContext context) {
@@ -63,21 +66,25 @@ class Screen3 extends StatelessWidget {
             ],
           )),
           const SizedBox(height: 10),
-          TextFormField(
-            decoration: InputDecoration(
-              hintText: 'Mer キッチン',
-              hintStyle: const TextStyle(
-                color: Colors.black,
-                fontSize: 15,
-                fontWeight: FontWeight.normal,
-              ),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10),
-                gapPadding: 5,
-                borderSide: const BorderSide(color: Colors.grey, width: 2),
-              ),
-            ),
-          ),
+          Obx(() => TextFormField(
+                onChanged: (value) {
+                  _controller.gettf1(value);
+                },
+                initialValue: _controller.tf1.value,
+                decoration: InputDecoration(
+                  hintText: 'Mer キッチン',
+                  hintStyle: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 15,
+                    fontWeight: FontWeight.normal,
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    gapPadding: 5,
+                    borderSide: const BorderSide(color: Colors.grey, width: 2),
+                  ),
+                ),
+              )),
           const SizedBox(height: 10),
           RichText(
               text: const TextSpan(
@@ -95,21 +102,25 @@ class Screen3 extends StatelessWidget {
             ],
           )),
           const SizedBox(height: 10),
-          TextFormField(
-            decoration: InputDecoration(
-              hintText: '林田　絵梨花',
-              hintStyle: const TextStyle(
-                color: Colors.black,
-                fontSize: 15,
-                fontWeight: FontWeight.normal,
-              ),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10),
-                gapPadding: 5,
-                borderSide: const BorderSide(color: Colors.grey, width: 2),
-              ),
-            ),
-          ),
+          Obx(() => TextFormField(
+                onChanged: (value) {
+                  _controller.gettf2(value);
+                },
+                initialValue: _controller.tf2.value,
+                decoration: InputDecoration(
+                  hintText: '林田　絵梨花',
+                  hintStyle: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 15,
+                    fontWeight: FontWeight.normal,
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    gapPadding: 5,
+                    borderSide: const BorderSide(color: Colors.grey, width: 2),
+                  ),
+                ),
+              )),
           const SizedBox(height: 10),
           RichText(
               text: const TextSpan(
@@ -127,21 +138,25 @@ class Screen3 extends StatelessWidget {
             ],
           )),
           const SizedBox(height: 10),
-          TextFormField(
-            decoration: InputDecoration(
-              hintText: '123 - 4567 8910',
-              hintStyle: const TextStyle(
-                color: Colors.black,
-                fontSize: 15,
-                fontWeight: FontWeight.normal,
-              ),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10),
-                gapPadding: 5,
-                borderSide: const BorderSide(color: Colors.grey, width: 2),
-              ),
-            ),
-          ),
+          Obx(() => TextFormField(
+                onChanged: (value) {
+                  _controller.gettf3(value);
+                },
+                initialValue: _controller.tf3.value,
+                decoration: InputDecoration(
+                  hintText: '123 - 4567 8910',
+                  hintStyle: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 15,
+                    fontWeight: FontWeight.normal,
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    gapPadding: 5,
+                    borderSide: const BorderSide(color: Colors.grey, width: 2),
+                  ),
+                ),
+              )),
           const SizedBox(height: 10),
           RichText(
               text: const TextSpan(
@@ -159,21 +174,25 @@ class Screen3 extends StatelessWidget {
             ],
           )),
           const SizedBox(height: 10),
-          TextFormField(
-            decoration: InputDecoration(
-              hintText: '大分県豊後高田市払田791-13',
-              hintStyle: const TextStyle(
-                color: Colors.black,
-                fontSize: 15,
-                fontWeight: FontWeight.normal,
-              ),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10),
-                gapPadding: 5,
-                borderSide: const BorderSide(color: Colors.grey, width: 2),
-              ),
-            ),
-          ),
+          Obx(() => TextFormField(
+                onChanged: (value) {
+                  _controller.gettf4(value);
+                },
+                initialValue: _controller.tf4.value,
+                decoration: InputDecoration(
+                  hintText: '大分県豊後高田市払田791-13',
+                  hintStyle: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 15,
+                    fontWeight: FontWeight.normal,
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    gapPadding: 5,
+                    borderSide: const BorderSide(color: Colors.grey, width: 2),
+                  ),
+                ),
+              )),
 
           // const SizedBox(height: 10),
           SizedBox(
@@ -470,54 +489,94 @@ class Screen3 extends StatelessWidget {
           Wrap(
             spacing: 10,
             children: [
-              Chip(
-                elevation: 0,
-                side: BorderSide.none,
-                avatar: Checkbox(value: false, onChanged: (val) {}),
-                label: const Text('月'),
-              ),
-              Chip(
-                elevation: 0,
-                side: BorderSide.none,
-                avatar: Checkbox(value: false, onChanged: (val) {}),
-                label: const Text('火'),
-              ),
-              Chip(
-                elevation: 0,
-                side: BorderSide.none,
-                avatar: Checkbox(value: false, onChanged: (val) {}),
-                label: const Text('水'),
-              ),
-              Chip(
-                elevation: 0,
-                side: BorderSide.none,
-                avatar: Checkbox(value: false, onChanged: (val) {}),
-                label: const Text('木'),
-              ),
-              Chip(
-                elevation: 0,
-                side: BorderSide.none,
-                avatar: Checkbox(value: false, onChanged: (val) {}),
-                label: const Text('金'),
-              ),
-              Chip(
-                elevation: 0,
-                side: BorderSide.none,
-                avatar: Checkbox(value: true, onChanged: (val) {}),
-                label: const Text('土'),
-              ),
-              Chip(
-                elevation: 0,
-                side: BorderSide.none,
-                avatar: Checkbox(value: true, onChanged: (val) {}),
-                label: const Text('日'),
-              ),
-              Chip(
-                elevation: 0,
-                side: BorderSide.none,
-                avatar: Checkbox(value: true, onChanged: (val) {}),
-                label: const Text('祝'),
-              ),
+              Obx(() => InputChip(
+                    onPressed: () {
+                      _controller.getboollf1(0, !_controller.lf1[0].value);
+                    },
+                    elevation: 0,
+                    side: BorderSide.none,
+                    avatar: Checkbox(
+                        value: _controller.lf1[0].toString().contains('true'),
+                        onChanged: (val) {}),
+                    label: const Text('月'),
+                  )),
+              Obx(() => InputChip(
+                    onPressed: () {
+                      _controller.getboollf1(1, !_controller.lf1[1].value);
+                    },
+                    elevation: 0,
+                    side: BorderSide.none,
+                    avatar: Checkbox(
+                        value: _controller.lf1[1].toString().contains('true'),
+                        onChanged: (val) {}),
+                    label: const Text('火'),
+                  )),
+              Obx(() => InputChip(
+                    onPressed: () {
+                      _controller.getboollf1(2, !_controller.lf1[2].value);
+                    },
+                    elevation: 0,
+                    side: BorderSide.none,
+                    avatar: Checkbox(
+                        value: _controller.lf1[2].toString().contains('true'),
+                        onChanged: (val) {}),
+                    label: const Text('水'),
+                  )),
+              Obx(() => InputChip(
+                    onPressed: () {
+                      _controller.getboollf1(3, !_controller.lf1[3].value);
+                    },
+                    elevation: 0,
+                    side: BorderSide.none,
+                    avatar: Checkbox(
+                        value: _controller.lf1[3].toString().contains('true'),
+                        onChanged: (val) {}),
+                    label: const Text('木'),
+                  )),
+              Obx(() => InputChip(
+                    onPressed: () {
+                      _controller.getboollf1(4, !_controller.lf1[4].value);
+                    },
+                    elevation: 0,
+                    side: BorderSide.none,
+                    avatar: Checkbox(
+                        value: _controller.lf1[4].toString().contains('true'),
+                        onChanged: (val) {}),
+                    label: const Text('金'),
+                  )),
+              Obx(() => InputChip(
+                    onPressed: () {
+                      _controller.getboollf1(5, !_controller.lf1[5].value);
+                    },
+                    elevation: 0,
+                    side: BorderSide.none,
+                    avatar: Checkbox(
+                        value: _controller.lf1[5].toString().contains('true'),
+                        onChanged: (val) {}),
+                    label: const Text('土'),
+                  )),
+              Obx(() => InputChip(
+                    onPressed: () {
+                      _controller.getboollf1(6, !_controller.lf1[6].value);
+                    },
+                    elevation: 0,
+                    side: BorderSide.none,
+                    avatar: Checkbox(
+                        value: _controller.lf1[6].toString().contains('true'),
+                        onChanged: (val) {}),
+                    label: const Text('日'),
+                  )),
+              Obx(() => InputChip(
+                    onPressed: () {
+                      _controller.getboollf1(7, !_controller.lf1[7].value);
+                    },
+                    elevation: 0,
+                    side: BorderSide.none,
+                    avatar: Checkbox(
+                        value: _controller.lf1[7].toString().contains('true'),
+                        onChanged: (val) {}),
+                    label: const Text('祝'),
+                  )),
             ],
           ),
           const SizedBox(height: 10),
@@ -575,16 +634,20 @@ class Screen3 extends StatelessWidget {
             ],
           )),
           const SizedBox(height: 10),
-          TextFormField(
-              initialValue: '40席',
-              decoration: InputDecoration(
-                contentPadding: const EdgeInsets.only(left: 5),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  borderSide: const BorderSide(color: Colors.grey, width: 2),
+          Obx(() => TextFormField(
+                onChanged: (value) {
+                  _controller.gettf5(value);
+                },
+                initialValue: _controller.tf5.value,
+                decoration: InputDecoration(
+                  hintText: '40席',
+                  contentPadding: const EdgeInsets.only(left: 5),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: const BorderSide(color: Colors.grey, width: 2),
+                  ),
                 ),
-              ),
-              onChanged: (val) {}),
+              )),
 
           const SizedBox(height: 10),
           RichText(
@@ -605,18 +668,28 @@ class Screen3 extends StatelessWidget {
           const SizedBox(height: 10),
           Wrap(
             children: [
-              Chip(
-                elevation: 0,
-                side: BorderSide.none,
-                avatar: Checkbox(value: true, onChanged: (val) {}),
-                label: const Text('有'),
-              ),
-              Chip(
-                elevation: 0,
-                side: BorderSide.none,
-                avatar: Checkbox(value: false, onChanged: (val) {}),
-                label: const Text('無'),
-              ),
+              Obx(() => InputChip(
+                    onPressed: () {
+                      _controller.getboollf2(0, !_controller.lf2[0].value);
+                    },
+                    elevation: 0,
+                    side: BorderSide.none,
+                    avatar: Checkbox(
+                        value: _controller.lf2[0].toString().contains('true'),
+                        onChanged: (val) {}),
+                    label: const Text('有'),
+                  )),
+              Obx(() => InputChip(
+                    onPressed: () {
+                      _controller.getboollf2(1, !_controller.lf2[1].value);
+                    },
+                    elevation: 0,
+                    side: BorderSide.none,
+                    avatar: Checkbox(
+                        value: _controller.lf2[1].toString().contains('true'),
+                        onChanged: (val) {}),
+                    label: const Text('無'),
+                  )),
             ],
           ),
           const SizedBox(height: 10),
@@ -638,18 +711,28 @@ class Screen3 extends StatelessWidget {
           const SizedBox(height: 10),
           Wrap(
             children: [
-              Chip(
-                elevation: 0,
-                side: BorderSide.none,
-                avatar: Checkbox(value: true, onChanged: (val) {}),
-                label: const Text('有'),
-              ),
-              Chip(
-                elevation: 0,
-                side: BorderSide.none,
-                avatar: Checkbox(value: false, onChanged: (val) {}),
-                label: const Text('無'),
-              ),
+              Obx(() => InputChip(
+                    onPressed: () {
+                      _controller.getboollf3(0, !_controller.lf3[0].value);
+                    },
+                    elevation: 0,
+                    side: BorderSide.none,
+                    avatar: Checkbox(
+                        value: _controller.lf3[0].toString().contains('true'),
+                        onChanged: (val) {}),
+                    label: const Text('有'),
+                  )),
+              Obx(() => InputChip(
+                    onPressed: () {
+                      _controller.getboollf3(1, !_controller.lf3[1].value);
+                    },
+                    elevation: 0,
+                    side: BorderSide.none,
+                    avatar: Checkbox(
+                        value: _controller.lf3[1].toString().contains('true'),
+                        onChanged: (val) {}),
+                    label: const Text('無'),
+                  )),
             ],
           ),
           const SizedBox(height: 10),
@@ -669,22 +752,32 @@ class Screen3 extends StatelessWidget {
             ],
           )),
           const SizedBox(height: 10),
-          Wrap(
-            children: [
-              Chip(
-                elevation: 0,
-                side: BorderSide.none,
-                avatar: Checkbox(value: true, onChanged: (val) {}),
-                label: const Text('有（最大３枚まで）'),
-              ),
-              Chip(
-                elevation: 0,
-                side: BorderSide.none,
-                avatar: Checkbox(value: false, onChanged: (val) {}),
-                label: const Text('無'),
-              ),
-            ],
-          ),
+          Obx(() => Wrap(
+                children: [
+                  InputChip(
+                    onPressed: () {
+                      _controller.getboollf4(0, !_controller.lf4[0].value);
+                    },
+                    elevation: 0,
+                    side: BorderSide.none,
+                    avatar: Checkbox(
+                        value: _controller.lf4[0].toString().contains('true'),
+                        onChanged: (val) {}),
+                    label: const Text('有（最大３枚まで）'),
+                  ),
+                  InputChip(
+                    onPressed: () {
+                      _controller.getboollf4(1, !_controller.lf4[1].value);
+                    },
+                    elevation: 0,
+                    side: BorderSide.none,
+                    avatar: Checkbox(
+                        value: _controller.lf4[1].toString().contains('true'),
+                        onChanged: (val) {}),
+                    label: const Text('無'),
+                  ),
+                ],
+              )),
           const SizedBox(height: 10),
 
           Row(
@@ -715,16 +808,20 @@ class Screen3 extends StatelessWidget {
             ],
           )),
           const SizedBox(height: 10),
-          TextFormField(
-              initialValue: 'いちごクリームアイスクリーム, ジュース',
-              decoration: InputDecoration(
-                contentPadding: const EdgeInsets.only(left: 5),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  borderSide: const BorderSide(color: Colors.grey, width: 2),
+          Obx(() => TextFormField(
+                onChanged: (value) {
+                  _controller.gettf6(value);
+                },
+                initialValue: _controller.tf6.value,
+                decoration: InputDecoration(
+                  hintText: 'いちごクリームアイスクリーム, ジュース',
+                  contentPadding: const EdgeInsets.only(left: 5),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: const BorderSide(color: Colors.grey, width: 2),
+                  ),
                 ),
-              ),
-              onChanged: (val) {}),
+              )),
           const SizedBox(height: 10),
 
           Container(

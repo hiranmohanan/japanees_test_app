@@ -17,10 +17,16 @@ class Screen2 extends StatelessWidget {
           centerTitle: true,
           backgroundColor: const Color(0xFFA8B1FF),
           leading: IconButton.filled(
+            alignment: Alignment.center,
+            padding: const EdgeInsets.all(0),
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: const Icon(Icons.arrow_back_ios),
+            iconSize: 30,
+            icon: const Icon(
+              Icons.arrow_back_ios,
+              color: Colors.white,
+            ),
             // alignment: Alignment.centerRight,
             style: ButtonStyle(
               backgroundColor:
@@ -38,7 +44,6 @@ class Screen2 extends StatelessWidget {
       body: ListView(
         shrinkWrap: true,
         physics: const AlwaysScrollableScrollPhysics(),
-        scrollDirection: Axis.vertical,
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -94,7 +99,7 @@ class Screen2 extends StatelessWidget {
             child: ListView(
               padding: const EdgeInsets.only(top: 20),
               shrinkWrap: true,
-              physics: const AlwaysScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               scrollDirection: Axis.vertical,
               children: [
                 Center(
@@ -143,7 +148,7 @@ class Screen2 extends StatelessWidget {
                       trailing: Text('1 個'),
                     );
                   },
-                  itemCount: 10,
+                  itemCount: 15,
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
                   scrollDirection: Axis.vertical,

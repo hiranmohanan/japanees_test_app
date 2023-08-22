@@ -19,15 +19,19 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           cardTheme: const CardTheme(color: Colors.white, elevation: 1),
-          appBarTheme: const AppBarTheme(backgroundColor: Colors.white),
+          appBarTheme: const AppBarTheme(
+              backgroundColor: Colors.white,
+              elevation: 0,
+              scrolledUnderElevation: 0,
+              iconTheme: IconThemeData(color: Colors.black)),
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
         initialRoute: '/home',
         routes: {
-          '/home': (context) => const HomeScreen(),
-          '/screen2': (context) => const Screen2(),
-          '/screen3': (context) => const Screen3(),
+          '/home': (context) => HomeScreen(),
+          '/screen2': (context) => Screen2(),
+          '/screen3': (context) => Screen3(),
         });
   }
 }

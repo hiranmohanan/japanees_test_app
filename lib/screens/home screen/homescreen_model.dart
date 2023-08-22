@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 import '../../appfonts/appfonts.dart';
 import '../../appimages/appimages.dart';
+import '../../controllers/homescreen_controller.dart';
 
 class HomeScreenHBoxModel {
   String title;
@@ -26,42 +28,55 @@ class HomeScreenHBoxModel {
 }
 
 class DateRow extends StatelessWidget {
+  DateRow({super.key});
+
+  final HomescreenController _controller = HomescreenController();
+
   final DateTime _today = DateTime.now();
+
   final int indexi = 30;
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
-      child: Row(
-        children: List.generate(
-          30,
-          (index) {
-            final date = _today.add(Duration(days: index));
-            final Weekday = DateFormat.E().format(date).toString();
-            final japaneseWeekday = dateconverttojap(Weekday);
-            // final japaneseWeekdays = date.;
+      child: Obx(() => Row(
+            children: List.generate(
+              30,
+              (index) {
+                final date = _today.add(Duration(days: index));
+                final Weekday = DateFormat.E().format(date).toString();
+                final japaneseWeekday = dateconverttojap(Weekday);
+                // final japaneseWeekdays = date.;
 
-            return Container(
-              width: 50,
-              decoration: BoxDecoration(
-                color: date == _today ? const Color(0xFFFAAA14) : Colors.white,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              margin: const EdgeInsets.all(8.0),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  children: [
-                    Text(japaneseWeekday), // Display the Japanese weekday
-                    Text(date.day.toString()), // Display the day of the month
-                  ],
-                ),
-              ),
-            );
-          },
-        ),
-      ),
+                return GestureDetector(
+                  onTap: () {
+                    _controller.getindex(index);
+                  },
+                  child: Container(
+                    width: 50,
+                    decoration: BoxDecoration(
+                      color: index == _controller.currentindex.value
+                          ? const Color(0xFFFAAA14)
+                          : Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    margin: const EdgeInsets.all(8.0),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          Text(japaneseWeekday), // Display the Japanese weekday
+                          Text(date.day
+                              .toString()), // Display the day of the month
+                        ],
+                      ),
+                    ),
+                  ),
+                );
+              },
+            ),
+          )),
     );
   }
 }
